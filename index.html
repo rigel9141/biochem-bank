@@ -6,15 +6,16 @@
 <title>生物化学 · 题库</title>
 <style>
 :root{
-  --bg:#FFF7FB; --card:#FFFFFF; --ink:#574A60; --ink-soft:#9B8FA5;
-  --mint:#8FE3C6; --mint-d:#5FC8AE; --blush:#FFA9C6; --butter:#FFE08A;
-  --sky:#9CD6FF; --lav:#C9B6FF; --line:#F8E9F3;
-  --ok:#7FD8A9; --bad:#FF9EAE; --shadow:0 8px 22px rgba(190,140,180,.16);
+  --bg:#FBFAF9; --card:#FFFFFF; --ink:#56504E; --ink-soft:#8E8783;
+  --mint:#DDEBE4; --mint-d:#9CC3B4; --blush:#F5E2E7; --blush-d:#D9A3B4;
+  --butter:#F5EEDC; --butter-d:#D9C48C; --sky:#DEE9F2; --sky-d:#9DBBD4;
+  --lav:#E8E3F0; --lav-d:#B6A8CC; --line:#EFEAE6;
+  --ok:#A9CBB5; --bad:#DFAAB2; --shadow:0 6px 16px rgba(140,130,125,.10);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background:#FFF8FC;
+  background:var(--bg);
   color:var(--ink);
   font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
   line-height:1.75; -webkit-font-smoothing:antialiased;
@@ -28,36 +29,41 @@ h1{font-size:26px;margin:0;letter-spacing:.5px}
 .crumb a:hover{text-decoration:underline}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
 .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:18px 20px;border:1px solid var(--line)}
+.card.c0{background:#F4F8F5;border-color:#E2EDE6}
+.card.c1{background:#F3F7FA;border-color:#E1EAF1}
+.card.c2{background:#FAF6EC;border-color:#EFE6D2}
+.card.c3{background:#F6F4FA;border-color:#E9E3F1}
+.card.c4{background:#FBF3F5;border-color:#F1E1E6}
 .card h3{margin:.2em 0 .3em;font-size:17px}
 .card .meta{color:var(--ink-soft);font-size:13px}
 a.card{display:block;text-decoration:none;color:inherit;transition:transform .18s ease, box-shadow .18s ease}
 a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(120,110,100,.16)}
-.bar{height:8px;border-radius:99px;background:#FCEBF6;margin-top:12px;overflow:hidden}
-.bar > i{display:block;height:100%;border-radius:99px;background:#FFA6C9}
-.chip{display:inline-block;font-size:12px;color:#9A5E8A;background:#FFE9F4;border-radius:99px;padding:2px 10px;margin-right:6px}
-.chip.b{background:#FFE1EA;color:#C4618A}
-.chip.y{background:#FFF4D2;color:#A8862F}
-.chip.l{background:#EDE7FF;color:#7A67C6}
+.bar{height:8px;border-radius:99px;background:#EFEAE6;margin-top:12px;overflow:hidden}
+.bar > i{display:block;height:100%;border-radius:99px;background:#A7C7B8}
+.chip{display:inline-block;font-size:12px;color:#6F7F78;background:#EDF4F0;border-radius:99px;padding:2px 10px;margin-right:6px}
+.chip.b{background:#F7E9EC;color:#9C7181}
+.chip.y{background:#F6F1E4;color:#92825C}
+.chip.l{background:#EFECF4;color:#7C7489}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .btn{cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);
   border-radius:14px;padding:9px 16px;font-size:14.5px;transition:all .16s ease;box-shadow:0 2px 6px rgba(150,140,130,.06)}
-.btn:hover{border-color:var(--blush);transform:translateY(-1px)}
-.btn.primary{background:#FF9DC4;color:#fff;border:none}
-.btn.ghost{background:#FFF9FD}
-.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#FFFDFE;
+.btn:hover{border-color:#B7CFC4;transform:translateY(-1px)}
+.btn.primary{background:#9FC3B4;color:#fff;border:none}
+.btn.ghost{background:#FAF8F5}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#FCFBFA;
   border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:9px 0;cursor:pointer;font-size:15px;transition:all .16s}
-.opt:hover{border-color:var(--sky);background:#F6FBFF}
-.opt .k{flex:0 0 26px;height:26px;border-radius:9px;background:#FFE9F4;color:#B3689B;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
-.opt.sel{border-color:var(--sky);background:#EFF8FF}
-.opt.good{border-color:var(--ok);background:#EAFAF1}
-.opt.bad{border-color:var(--bad);background:#FFF0F2}
+.opt:hover{border-color:var(--sky-d);background:#F7FAFC}
+.opt .k{flex:0 0 26px;height:26px;border-radius:9px;background:#EFEAE6;color:#7E7773;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.opt.sel{border-color:var(--sky-d);background:#F2F7FA}
+.opt.good{border-color:var(--ok);background:#F0F7F2}
+.opt.bad{border-color:var(--bad);background:#FBF1F3}
 .opt.good .k{background:var(--ok);color:#fff}
 .opt.bad .k{background:var(--bad);color:#fff}
 .qstem{font-size:16.5px;white-space:pre-wrap}
 .panel{margin-top:14px;border-radius:16px;padding:12px 16px;font-size:14.5px;display:none}
 .panel.show{display:block}
-.panel.hint{background:#FFF9E8;border:1px dashed #F3D98F}
-.panel.answer{background:#EEFBF5;border:1px solid #B7EBD3}
+.panel.hint{background:#FAF6EA;border:1px dashed #E4D8B7}
+.panel.answer{background:#F2F8F4;border:1px solid #CFE4D8}
 .panel .t{font-weight:600;margin-bottom:4px}
 .qhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
 .qno{color:var(--ink-soft);font-size:13.5px}
@@ -71,9 +77,9 @@ details.know summary{cursor:pointer;font-weight:600;color:#5C6B64}
 .tabs{display:flex;gap:8px;margin:6px 0 16px}
 .tab{cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink-soft);
   border-radius:999px;padding:7px 18px;font-size:14px}
-.tab.on{background:#FF9DC4;color:#fff;border:none}
+.tab.on{background:#9FC3B4;color:#fff;border:none}
 .tpimg{width:100%;border-radius:14px;border:1px solid var(--line);margin:10px 0;cursor:zoom-in}
-.tpn{border-left:3px solid var(--butter);padding:2px 0 2px 12px;margin:12px 0;color:#7A6C78;font-size:14.5px}
+.tpn{border-left:3px solid var(--butter-d);padding:2px 0 2px 12px;margin:12px 0;color:#7A736E;font-size:14.5px}
 footer{margin-top:34px;color:var(--ink-soft);font-size:12.5px;text-align:center}
 </style>
 </head>
@@ -120,7 +126,7 @@ function home(){
   let html = '<div class="grid">';
   DATA.chapters.forEach((ch,ci) => {
     const st = chapterStats(ci);
-    html += `<a class="card" href="#/${ci}">
+    html += `<a class="card c${ci % 5}" href="#/${ci}">
       <h3>${esc(ch.name)}</h3>
       <div class="meta">${ch.sections.length} 个板块 · 共 ${st.total} 题 · 已做 ${st.seen} 题 · 答对 ${st.ok}</div>
       <div class="bar"><i style="width:${st.pct}%"></i></div>
@@ -146,7 +152,7 @@ function chapter(ci, tab){
       let total = s.questions.length, seen = 0, ok = 0;
       s.questions.forEach((q,qi) => { const id=qid(ci,si,qi); if(store.seen[id])seen++; if(store.ok[id])ok++; });
       const kinds = [...new Set(s.questions.map(q=>kindName(q.kind)))].join(' · ');
-      html += `<a class="card" href="#/${ci}/${si}/0">
+      html += `<a class="card c${(si + ci) % 5}" href="#/${ci}/${si}/0">
         <h3>${esc(s.name)}</h3>
         <div class="meta">${kinds} · ${total} 题 · 已做 ${seen} · 答对 ${ok}</div>
         <div class="bar"><i style="width:${total?Math.round(seen/total*100):0}%"></i></div>
